@@ -1,6 +1,6 @@
 import requests
 import argparse
-keys=['2023','图论','graph','2022'] #这里放文件名中要有的关键字
+keys=['大抄','计算机网络','计网','复习'] #这里放文件名中要有的关键字
 search='ustc' #这里放搜索关键字
 parser = argparse.ArgumentParser(description='Ustc-course Spyder')
 parser.add_argument('token', help='token for your github account', type=str)
@@ -28,3 +28,4 @@ for page in range(1,11):
                 url_list.append('https://github.com/'+full_name)
 for url in url_list:
     print(url)
+
