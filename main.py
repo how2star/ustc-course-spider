@@ -11,7 +11,7 @@ search=search.replace(' ','+')
 url_list=[]
 for page in range(1,11):
     repo=requests.get("https://api.github.com/search/repositories?q="+search+"&per_page=100&page="+str(page),headers=headers).json()
-    if(len(repo['items'])==0):
+    if 'items' not in repo or len(repo['items']) == 0:
         break
     for item in repo['items']:
         full_name=item['full_name']
@@ -28,4 +28,5 @@ for page in range(1,11):
                 url_list.append('https://github.com/'+full_name)
 for url in url_list:
     print(url)
+
 
